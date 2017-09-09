@@ -16,6 +16,7 @@ return [
     | to you can register your type with the IANA. For more details:
     | https://tools.ietf.org/html/rfc6838
     |
+
     */
 
     'standardsTree' => env('API_STANDARDS_TREE', 'x'),
