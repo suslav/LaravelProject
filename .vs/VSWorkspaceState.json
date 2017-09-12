@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app\\Api\\V1",
+    "\\app\\Http",
+    "\\app\\Jobs",
+    "\\database\\migrations"
+  ],
+  "SelectedNode": "\\database",
+  "PreviewInSolutionExplorer": false
+}
