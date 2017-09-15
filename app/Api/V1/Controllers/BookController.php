@@ -9,6 +9,9 @@ use App\Http\Requests;
 
 use JWTAuth;
 use App\Book;
+use App\Videocategories;
+use App\Articles;
+use App\Dialyschdule;
 use Dingo\Api\Routing\Helpers;
 
 class BookController extends Controller
@@ -17,21 +20,26 @@ class BookController extends Controller
 
   public function index()
 {
-    $currentUser = JWTAuth::parseToken()->authenticate();
-     return $currentUser
-       ->books()
-        ->orderBy('created_at', 'DESC')
-         ->get()
-        ->toArray();
+
+   //  $currentUser = JWTAuth::parseToken()->authenticate();
+   // return $currentUser
+    //    ->books()
+    //    ->orderBy('created_at', 'DESC')
+    //     ->get()
+    //   ->toArray();
 
 
-	//$books = Book::all();	 
-//	$response = [
-//	'msg' => 'List of all books',
-//	'books' => $books
-//	]; 
+	//  return videocategory()       
+  //        ->get()
+  //      ->toArray();
 
-//	return response()->json($response,200); 
+    $books = Videocategories::all();	 
+  	$response = [
+   //	'msg' => 'List of all books',
+  	'books' => $books
+  	]; 
+
+   	return response()->json($response,200); 
 
 	 
 	   

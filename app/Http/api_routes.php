@@ -19,9 +19,19 @@ $api->version('v1', function ($api) {
 		return \App\User::all();
 	});
 
- $api->group(['middleware' => 'api.auth'], function ($api) {
+ //$api->group(['middleware' => 'api.auth'], function ($api) {
 	$api->post('book/store', 'App\Api\V1\Controllers\BookController@store');
 	$api->get('book', 'App\Api\V1\Controllers\BookController@index');
- });
+
+	$api->get('VideocategoriesList', 'App\Api\V1\Controllers\VideocategoriesController@index');
+	
+	$api->get('Videolists', 'App\Api\V1\Controllers\VideolistsController@index');
+// });
+
+$api->group(['middleware' => 'api.auth'], function ($api) {
+
+$api->get('Videoinsert', 'App\Api\V1\Controllers\VideolistsController@store');
+
+});
 
 });

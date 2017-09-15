@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateVideolistTable extends Migration {
+class CreateVideolistsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateVideolistTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('videolist', function(Blueprint $table)
+		Schema::create('videolists', function(Blueprint $table)
 		{
 			$table->integer('VideoId', true);
 			$table->string('VideoTitle', 200);
@@ -31,7 +31,7 @@ class CreateVideolistTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('videolist');
+		Schema::drop('videolists');
 	}
 
 }

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class VideocategoryController extends Controller
+class ArticlesController extends Controller
 {
     //
 }

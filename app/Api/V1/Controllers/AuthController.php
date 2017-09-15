@@ -30,9 +30,9 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-		$user = Auth::user();
+		//$user = Auth::user();
 
-		$id = Auth::id();
+		//$id = Auth::id();
 		 
         if($validator->fails()) {
             throw new ValidationHttpException($validator->errors()->all());
