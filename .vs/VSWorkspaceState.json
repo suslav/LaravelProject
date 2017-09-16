@@ -1,6 +1,20 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\app",
+    "\\app\\Api",
+    "\\app\\Api\\V1",
+    "\\app\\Api\\V1\\Controllers",
+    "\\public",
+    "\\resources",
+    "\\resources\\assets",
+    "\\resources\\assets\\sass",
+    "\\resources\\lang",
+    "\\resources\\lang\\en",
+    "\\resources\\views",
+    "\\resources\\views\\errors",
+    "\\tests"
   ],
+  "SelectedNode": "\\database\\migrations\\2017_09_07_051530_create_books_table.php",
   "PreviewInSolutionExplorer": false
 }

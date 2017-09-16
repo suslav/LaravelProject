@@ -20,18 +20,22 @@ $api->version('v1', function ($api) {
 	});
 
  //$api->group(['middleware' => 'api.auth'], function ($api) {
+
 	$api->post('book/store', 'App\Api\V1\Controllers\BookController@store');
 	$api->get('book', 'App\Api\V1\Controllers\BookController@index');
 
 	$api->get('VideocategoriesList', 'App\Api\V1\Controllers\VideocategoriesController@index');
 	
-	$api->get('Videolists', 'App\Api\V1\Controllers\VideolistsController@index');
+	$api->get('videoslist', 'App\Api\V1\Controllers\VideolistsController@index');
+	$api->get('videoslist/{id}', 'App\Api\V1\Controllers\VideolistsController@show');
+	$api->get('videodisplay/{id}', 'App\Api\V1\Controllers\VideolistsController@showbyid');
+
 // });
 
-$api->group(['middleware' => 'api.auth'], function ($api) {
+ $api->group(['middleware' => 'api.auth'], function ($api) {
 
-$api->get('Videoinsert', 'App\Api\V1\Controllers\VideolistsController@store');
+$api->post('videolist/store', 'App\Api\V1\Controllers\VideolistsController@store');
 
-});
+ });
 
 });
