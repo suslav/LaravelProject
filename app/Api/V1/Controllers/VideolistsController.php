@@ -79,7 +79,7 @@ public function show($id)
 
 public function showbyid($id)
 {
-   $videos = Videolists::find($id);  
+   $videos = Videolists::where('VideoId',$id)->get(); 
    return response()->json($videos); 
 }
 

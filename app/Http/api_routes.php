@@ -30,11 +30,15 @@ $api->version('v1', function ($api) {
 	$api->get('videoslist/{id}', 'App\Api\V1\Controllers\VideolistsController@show');
 	$api->get('videodisplay/{id}', 'App\Api\V1\Controllers\VideolistsController@showbyid');
 
+	$api->get('photoalbums', 'App\Api\V1\Controllers\PhotoalbumController@index');
+	$api->get('photodisplay/{id}', 'App\Api\V1\Controllers\PhotoalbumController@showbyid');
+
 // });
 
- $api->group(['middleware' => 'api.auth'], function ($api) {
+   $api->group(['middleware' => 'api.auth'], function ($api) {
 
-$api->post('videolist/store', 'App\Api\V1\Controllers\VideolistsController@store');
+   $api->post('videolist/store', 'App\Api\V1\Controllers\VideolistsController@store');
+   $api->post('photoalbum/store', 'App\Api\V1\Controllers\PhotoalbumController@store');
 
  });
 
