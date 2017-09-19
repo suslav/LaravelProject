@@ -26,9 +26,6 @@ return [
     'allowedMethods' => ['GET','PUT','POST','DELETE','OPTIONS'],
     'exposedHeaders' => [],
     'maxAge' => 0,
-    'hosts' => [],
-
-
-
+    'hosts' => [],	 
 ];
 

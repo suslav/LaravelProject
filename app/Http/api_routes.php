@@ -33,12 +33,15 @@ $api->version('v1', function ($api) {
 	$api->get('photoalbums', 'App\Api\V1\Controllers\PhotoalbumController@index');
 	$api->get('photodisplay/{id}', 'App\Api\V1\Controllers\PhotoalbumController@showbyid');
 
+	$api->get('articleslist', 'App\Api\V1\Controllers\ArticlesController@index');
+
 // });
 
    $api->group(['middleware' => 'api.auth'], function ($api) {
 
    $api->post('videolist/store', 'App\Api\V1\Controllers\VideolistsController@store');
    $api->post('photoalbum/store', 'App\Api\V1\Controllers\PhotoalbumController@store');
+   $api->post('articles/store', 'App\Api\V1\Controllers\ArticlesController@store');
 
  });
 

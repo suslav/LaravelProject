@@ -1,11 +1,10 @@
 {
   "ExpandedNodes": [
+    "\\app",
     "\\app\\Api",
     "\\app\\Api\\V1",
     "\\app\\Api\\V1\\Controllers",
-    "\\resources\\assets",
-    "\\resources\\assets\\sass",
-    "\\resources\\lang"
+    "\\app\\Http"
   ],
   "PreviewInSolutionExplorer": false
 }
