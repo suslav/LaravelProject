@@ -50,4 +50,10 @@ class ArticlesController extends Controller
    return response()->json($articles);    
 }
 
+public function showbyid($id)
+{
+   $article = Articles::where('ArticleID',$id)->get(); 
+   return response()->json($article); 
+}
+
 }

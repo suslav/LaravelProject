@@ -34,6 +34,13 @@ $api->version('v1', function ($api) {
 	$api->get('photodisplay/{id}', 'App\Api\V1\Controllers\PhotoalbumController@showbyid');
 
 	$api->get('articleslist', 'App\Api\V1\Controllers\ArticlesController@index');
+	$api->get('articleslist/{id}', 'App\Api\V1\Controllers\ArticlesController@showbyid');
+
+	$api->get('eventslist', 'App\Api\V1\Controllers\EventsController@index');
+	$api->get('eventslist/{id}', 'App\Api\V1\Controllers\EventsController@showbyid');
+
+	$api->get('srividyacourseslist', 'App\Api\V1\Controllers\SrividyacoursesController@index');
+	$api->get('srividyacourseslist/{id}', 'App\Api\V1\Controllers\SrividyacoursesController@showbyid');
 
 // });
 
@@ -42,6 +49,8 @@ $api->version('v1', function ($api) {
    $api->post('videolist/store', 'App\Api\V1\Controllers\VideolistsController@store');
    $api->post('photoalbum/store', 'App\Api\V1\Controllers\PhotoalbumController@store');
    $api->post('articles/store', 'App\Api\V1\Controllers\ArticlesController@store');
+   $api->post('events/store', 'App\Api\V1\Controllers\EventsController@store');
+   $api->post('srividyacourses/store', 'App\Api\V1\Controllers\SrividyacoursesController@store');
 
  });
 

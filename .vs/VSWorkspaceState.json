@@ -4,7 +4,10 @@
     "\\app\\Api",
     "\\app\\Api\\V1",
     "\\app\\Api\\V1\\Controllers",
-    "\\app\\Http"
+    "\\app\\Http",
+    "\\app\\Policies",
+    "\\app\\Providers",
+    "\\database\\migrations"
   ],
   "PreviewInSolutionExplorer": false
 }
