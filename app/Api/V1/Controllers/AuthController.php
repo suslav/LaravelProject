@@ -48,7 +48,7 @@ class AuthController extends Controller
 
         //return response()->json(compact('token'));	 
 
-		return response()->json(['token' => $token,'UserTypeID'=>Auth::user()->UserTypeID]);	 
+		return response()->json(['token' => $token,'UserTypeID'=>Auth::user()->UserTypeID,'UserID'=>Auth::user()->id]);	 
     }
 
     public function signup(Request $request)

@@ -42,6 +42,12 @@ $api->version('v1', function ($api) {
 	$api->get('srividyacourseslist', 'App\Api\V1\Controllers\SrividyacoursesController@index');
 	$api->get('srividyacourseslist/{id}', 'App\Api\V1\Controllers\SrividyacoursesController@showbyid');
 
+	$api->get('generalvisitorsanswerslist/{id}', 'App\Api\V1\Controllers\GeneralvisitorsanswersController@showbyid');
+
+	$api->post('generalvisitorsanswers/store', 'App\Api\V1\Controllers\GeneralvisitorsanswersController@store');
+
+	
+
 // });
 
    $api->group(['middleware' => 'api.auth'], function ($api) {
@@ -51,6 +57,8 @@ $api->version('v1', function ($api) {
    $api->post('articles/store', 'App\Api\V1\Controllers\ArticlesController@store');
    $api->post('events/store', 'App\Api\V1\Controllers\EventsController@store');
    $api->post('srividyacourses/store', 'App\Api\V1\Controllers\SrividyacoursesController@store');
+
+   $api->get('visitorslist/{date}', 'App\Api\V1\Controllers\VisitorsController@showbydate');
 
  });
 

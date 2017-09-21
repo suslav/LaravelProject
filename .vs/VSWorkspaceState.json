@@ -6,8 +6,7 @@
     "\\app\\Api\\V1\\Controllers",
     "\\app\\Http",
     "\\app\\Policies",
-    "\\app\\Providers",
-    "\\database\\migrations"
+    "\\app\\Providers"
   ],
   "PreviewInSolutionExplorer": false
 }
