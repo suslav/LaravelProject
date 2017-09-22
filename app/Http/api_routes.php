@@ -9,6 +9,8 @@ $api->version('v1', function ($api) {
 	$api->post('auth/recovery', 'App\Api\V1\Controllers\AuthController@recovery');
 	$api->post('auth/reset', 'App\Api\V1\Controllers\AuthController@reset');
 
+	$api->post('auth/store', 'App\Api\V1\Controllers\AuthController@store');
+
 	// example of protected route
 	$api->get('protected', ['middleware' => ['api.auth'], function () {		
 		return \App\User::all();
@@ -43,8 +45,11 @@ $api->version('v1', function ($api) {
 	$api->get('srividyacourseslist/{id}', 'App\Api\V1\Controllers\SrividyacoursesController@showbyid');
 
 	$api->get('generalvisitorsanswerslist/{id}', 'App\Api\V1\Controllers\GeneralvisitorsanswersController@showbyid');
+	$api->get('generalvisitorsinteranswerslist/{id}', 'App\Api\V1\Controllers\GeneralvisitorsinteranswersController@showbyid');
+	$api->get('svcanswerlist/{id}', 'App\Api\V1\Controllers\SvcanswerController@showbyid');
+	$api->get('srimahameruanswerslist/{id}', 'App\Api\V1\Controllers\SrimahameruanswersController@showbyid');
 
-	$api->post('generalvisitorsanswers/store', 'App\Api\V1\Controllers\GeneralvisitorsanswersController@store');
+	
 
 	
 
@@ -59,6 +64,10 @@ $api->version('v1', function ($api) {
    $api->post('srividyacourses/store', 'App\Api\V1\Controllers\SrividyacoursesController@store');
 
    $api->get('visitorslist/{date}', 'App\Api\V1\Controllers\VisitorsController@showbydate');
+   $api->post('generalvisitorsanswers/store', 'App\Api\V1\Controllers\GeneralvisitorsanswersController@store');
+   $api->post('generalvisitorsinteranswers/store', 'App\Api\V1\Controllers\GeneralvisitorsinteranswersController@store');
+   $api->post('svcanswer/store', 'App\Api\V1\Controllers\SvcanswerController@store');
+   $api->post('srimahameruanswers/store', 'App\Api\V1\Controllers\SrimahameruanswersController@store');
 
  });
 
