@@ -44,4 +44,30 @@ class VisitorsController extends Controller
         return response()->json($data);
 }
 
+
+	public function showbyid($id)
+{
+   $visitors = DB::table('Visitors')
+               ->join('users', 'Visitors.UserID', '=', 'users.id')
+			   ->join('visitorformtypes', 'Visitors.FormTypeID', '=', 'visitorformtypes.FormTypeID')
+               ->where('Visitors.UserID', $id)
+			   ->orderBy('Visitors.VisitorFormID', 'desc')
+			   ->get(); 
+
+     $data = [];
+
+	   foreach ($visitors as $visitor) {
+            $data[] = [
+                'VisitorFormID'   => $visitor->VisitorFormID,    
+	 			'UserID' => $visitor->UserID,
+	 			'FormTypeID' => $visitor->FormTypeID,
+	 			'Date' => $visitor->Date,
+	 			'UserName' => $visitor->email,
+	 			'FormType' => $visitor->FormType
+             ];
+         }
+        return response()->json($data);
+}
+
+
 }

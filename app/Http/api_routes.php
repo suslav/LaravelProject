@@ -64,6 +64,7 @@ $api->version('v1', function ($api) {
    $api->post('srividyacourses/store', 'App\Api\V1\Controllers\SrividyacoursesController@store');
 
    $api->get('visitorslist/{date}', 'App\Api\V1\Controllers\VisitorsController@showbydate');
+   $api->get('visitorslistbyid/{id}', 'App\Api\V1\Controllers\VisitorsController@showbyid');
    $api->post('generalvisitorsanswers/store', 'App\Api\V1\Controllers\GeneralvisitorsanswersController@store');
    $api->post('generalvisitorsinteranswers/store', 'App\Api\V1\Controllers\GeneralvisitorsinteranswersController@store');
    $api->post('svcanswer/store', 'App\Api\V1\Controllers\SvcanswerController@store');
