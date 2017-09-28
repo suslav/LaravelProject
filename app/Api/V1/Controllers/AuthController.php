@@ -17,6 +17,7 @@ use Dingo\Api\Exception\ValidationHttpException;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -147,9 +148,11 @@ public function updatepassword(Request $request, $id)
 
  $password = $request ->input('password');  
 
+ $hashpassword = Hash::make($password);
+
      $user = DB::table('users')
             ->where('id', $id)
-            ->update(['password' => $password]);
+            ->update(['password' => $hashpassword]);
 
 			if($user)
 			{

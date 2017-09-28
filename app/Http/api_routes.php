@@ -77,6 +77,9 @@ $api->version('v1', function ($api) {
    $api->put('updateuser/{id}', 'App\Api\V1\Controllers\AuthController@update');
    $api->put('updatepassword/{id}', 'App\Api\V1\Controllers\AuthController@updatepassword');
 
+
+   $api->post('reply/store', 'App\Api\V1\Controllers\ReplysController@store');
+
  });
 
 });

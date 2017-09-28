@@ -47,26 +47,52 @@ class VisitorsController extends Controller
 
 	public function showbyid($id)
 {
-   $visitors = DB::table('Visitors')
-               ->join('users', 'Visitors.UserID', '=', 'users.id')
-			   ->join('visitorformtypes', 'Visitors.FormTypeID', '=', 'visitorformtypes.FormTypeID')
-               ->where('Visitors.UserID', $id)
-			   ->orderBy('Visitors.VisitorFormID', 'desc')
-			   ->get(); 
+ 
+		    $visitors = DB::table('Visitors')
+    ->join('users', 'Visitors.UserID', '=', 'users.id')
+    ->join('visitorformtypes', 'Visitors.FormTypeID', '=', 'visitorformtypes.FormTypeID')
+    ->where('Visitors.UserID', $id)
+    ->orderBy('Visitors.VisitorFormID', 'desc')
+    ->get();
 
-     $data = [];
+$data = [];
 
-	   foreach ($visitors as $visitor) {
-            $data[] = [
-                'VisitorFormID'   => $visitor->VisitorFormID,    
-	 			'UserID' => $visitor->UserID,
-	 			'FormTypeID' => $visitor->FormTypeID,
-	 			'Date' => $visitor->Date,
-	 			'UserName' => $visitor->email,
-	 			'FormType' => $visitor->FormType
-             ];
-         }
-        return response()->json($data);
+foreach($visitors as $visitor) {
+    $data[] = [
+        'VisitorFormID'   => $visitor ->VisitorFormID,
+        'UserID' => $visitor ->UserID,
+        'FormTypeID' => $visitor ->FormTypeID,
+        'Date' => $visitor ->Date,
+        'UserName' => $visitor ->email,
+        'FormType' => $visitor ->FormType
+    ];
+}
+return response() ->json($data);
+
+//    $visitors = DB::table('Visitors')
+//               ->join('users', 'Visitors.UserID', '=', 'users.id')
+//    ->join('visitorformtypes', 'Visitors.FormTypeID', '=', 'visitorformtypes.FormTypeID')
+//    ->leftJoin('replys', 'Visitors.VisitorFormID', '=', 'replys.VisitorFormID') ->where('replys.VisitorFormID', '>', '0');
+//->where('Visitors.UserID', $id)
+//    ->orderBy('Visitors.VisitorFormID', 'desc')
+//    ->get();
+
+//$data = [];
+
+//foreach($visitors as $visitor) {
+//    $data[] = [
+//        'VisitorFormID'   => $visitor ->VisitorFormID,
+//        'UserID' => $visitor ->UserID,
+//        'FormTypeID' => $visitor ->FormTypeID,
+//        'Date' => $visitor ->Date,
+//        'UserName' => $visitor ->email,
+//        'FormType' => $visitor ->FormType
+//        , 'ApproveStatus' =>$visitor ->ApproveStatus
+//    ];
+//}
+//return response() ->json($data);
+
+
 }
 
 
