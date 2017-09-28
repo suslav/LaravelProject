@@ -37,6 +37,7 @@ $api->version('v1', function ($api) {
 
 	$api->get('articleslist', 'App\Api\V1\Controllers\ArticlesController@index');
 	$api->get('articleslist/{id}', 'App\Api\V1\Controllers\ArticlesController@showbyid');
+	
 
 	$api->get('eventslist', 'App\Api\V1\Controllers\EventsController@index');
 	$api->get('eventslist/{id}', 'App\Api\V1\Controllers\EventsController@showbyid');
@@ -50,7 +51,7 @@ $api->version('v1', function ($api) {
 	$api->get('srimahameruanswerslist/{id}', 'App\Api\V1\Controllers\SrimahameruanswersController@showbyid');
 
 	
-
+	
 	
 
 // });
@@ -69,6 +70,12 @@ $api->version('v1', function ($api) {
    $api->post('generalvisitorsinteranswers/store', 'App\Api\V1\Controllers\GeneralvisitorsinteranswersController@store');
    $api->post('svcanswer/store', 'App\Api\V1\Controllers\SvcanswerController@store');
    $api->post('srimahameruanswers/store', 'App\Api\V1\Controllers\SrimahameruanswersController@store');
+
+   $api->get('userlist/{id}', 'App\Api\V1\Controllers\AuthController@showbyid');
+  // $api->post('updateuser/{id}', 'App\Api\V1\Controllers\AuthController@update');
+
+   $api->put('updateuser/{id}', 'App\Api\V1\Controllers\AuthController@update');
+   $api->put('updatepassword/{id}', 'App\Api\V1\Controllers\AuthController@updatepassword');
 
  });
 

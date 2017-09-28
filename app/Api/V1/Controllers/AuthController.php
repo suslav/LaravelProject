@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Password;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Dingo\Api\Exception\ValidationHttpException;
 
-
 use Illuminate\Support\Facades\Auth;
+
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -133,4 +134,107 @@ class AuthController extends Controller
                 return $this->response->error('could_not_reset_password', 500);
         }
     } 
+
+	public function showbyid($id)
+ {
+   $user = User::where('id',$id)->get(); 
+   return response()->json($user); 
+}
+
+
+public function updatepassword(Request $request, $id)
+{
+
+ $password = $request ->input('password');  
+
+     $user = DB::table('users')
+            ->where('id', $id)
+            ->update(['password' => $password]);
+
+			if($user)
+			{
+			return response()->json($user,201);
+			}
+			else
+			{
+			
+			$response = [
+	 'msg' => 'An error occurred'
+ 	];
+
+	 return response()->json($response,404);
+			}
+ }
+
+public function update(Request $request, $id)
+{
+
+ $name = $request ->input('name');
+ $City = $request ->input('City');
+ $Country = $request ->input('Country');
+ $Address = $request ->input('Address');
+ $Mobile = $request ->input('Mobile');
+
+     $user = DB::table('users')
+            ->where('id', $id)
+            ->update(['name' => $name,'City'=>$City,'Country'=>$Country,'Address'=>$Address,'Mobile'=>$Mobile]);
+
+			if($user)
+			{
+			return response()->json($user,201);
+			}
+			else
+			{
+			
+			$response = [
+	 'msg' => 'An error occurred'
+ 	];
+
+	 return response()->json($response,404);
+			}
+			
+
+ 
+	 //    $currentUser = JWTAuth::parseToken()->authenticate();
+//$user = $currentUser ->users() ->find($id);
+//if (!$user)
+//    throw new NotFoundHttpException;
+//$user ->fill($request ->all());
+//if ($user ->save())
+//    return $this ->response ->noContent();
+//else
+//    return $this ->response ->error('could_not_update_book', 500);
+
+//    $user = User::where('id',$id)->get();
+//$name = $request ->input('name');
+//$City = $request ->input('City');
+//$Country = $request ->input('Country');
+//$Address = $request ->input('Address');
+//$Mobile = $request ->input('Mobile');
+
+//$vidlist = $user([
+//    'name' => $name,
+//    'City' => $City,
+//    'Country' => $Country,
+//    'Address' => $Address,
+//    'Mobile' => $Mobile,
+//]);
+
+
+//if ($vidlist ->save()) {
+//    $response = [
+//        'user' => $vidlist
+//    ];
+//    return response() ->json($vidlist, 201);
+//}
+
+//$response = [
+//    'msg' => 'An error occurred'
+//];
+
+//return response() ->json($response, 404);
+
+}
+
+
 }
