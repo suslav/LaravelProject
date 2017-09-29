@@ -79,6 +79,7 @@ $api->version('v1', function ($api) {
 
 
    $api->post('reply/store', 'App\Api\V1\Controllers\ReplysController@store');
+   $api->get('replydetail/{id}', 'App\Api\V1\Controllers\ReplysController@showbyid');
 
  });
 

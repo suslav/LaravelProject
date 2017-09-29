@@ -1,6 +1,5 @@
 {
   "ExpandedNodes": [
-    "",
     "\\app",
     "\\app\\Api",
     "\\app\\Api\\V1",
@@ -8,8 +7,9 @@
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\app\\Policies",
-    "\\config"
+    "\\database",
+    "\\database\\migrations",
+    "\\tests"
   ],
-  "SelectedNode": "\\app\\Http\\api_routes.php",
   "PreviewInSolutionExplorer": false
 }

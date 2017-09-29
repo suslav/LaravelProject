@@ -48,4 +48,13 @@ class ReplysController extends Controller
    return response()->json($response,404); 
 }
 
+
+public function showbyid($id)
+{
+    $reply = Replys::where('VisitorFormID',$id)->get(); 
+    return response()->json($reply);  
+}
+
+
+
 }
