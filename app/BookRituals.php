@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BookRituals extends Model
+class Bookrituals extends Model
 {
     public $timestamps = false;
 

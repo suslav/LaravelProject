@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "\\app",
-    "\\app\\Api",
     "\\app\\Api\\V1",
     "\\app\\Api\\V1\\Controllers",
     "\\app\\Http",

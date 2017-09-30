@@ -50,6 +50,10 @@ $api->version('v1', function ($api) {
 	$api->get('svcanswerlist/{id}', 'App\Api\V1\Controllers\SvcanswerController@showbyid');
 	$api->get('srimahameruanswerslist/{id}', 'App\Api\V1\Controllers\SrimahameruanswersController@showbyid');
 
+	$api->get('ritualslist', 'App\Api\V1\Controllers\RitualsController@index');
+
+	$api->get('ritualcategoriesList', 'App\Api\V1\Controllers\RitualcategoriesController@index');
+
 	
 	
 	
@@ -80,6 +84,13 @@ $api->version('v1', function ($api) {
 
    $api->post('reply/store', 'App\Api\V1\Controllers\ReplysController@store');
    $api->get('replydetail/{id}', 'App\Api\V1\Controllers\ReplysController@showbyid');
+
+   $api->post('bookritual/store', 'App\Api\V1\Controllers\BookritualsController@store');
+   $api->get('requstritualslist/{id}', 'App\Api\V1\Controllers\BookritualsController@showbyid');
+   $api->get('bookritualbyid/{id}', 'App\Api\V1\Controllers\BookritualsController@showbybookritualid');
+
+   $api->post('rituals/store', 'App\Api\V1\Controllers\RitualsController@store');
+   $api->get('ritualslistdate/{date}', 'App\Api\V1\Controllers\BookritualsController@showbydate');
 
  });
 
